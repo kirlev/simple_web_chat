@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="message_board.js"></script>
+    </head>
+    <body>
+        Hi user <%= @users_count %>
+        <div id="message_log">
+                <% @messages.each do |message| %>
+                    <p><%= "#{message.user_id}: #{message.content}" %></p>
+                <% end %>
+            </div>
+        <div class="message_board">
+            <div class="input">
+                <input id="new_message"/>
+                <input id="user_id" value="<%= @users_count %>" type="hidden" />
+            </div>
+            <div>
+                <button id="create_message">send</button>
+            </div>
+        </div>
+    </body>
+</html>
+
